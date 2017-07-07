@@ -18,21 +18,17 @@ const firebaseConfig = {
     messagingSenderId: "93980369476"
 };
 
-var Signin = require('./components/authentication/signin')
+import Signin from "./components/authentication/signin";
+
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-module.exports = React.createClass({
-    componentWillMount: function () {
-
-    },
-    render: function () {
-        return (
-            <View style={styles.container}>
-                <Signin />
-            </View>
-        )
-    }
-});
+export default class Main extends Component {
+  render() {
+    return (
+      <Signin/>
+    )
+  }
+}
 
 var styles = StyleSheet.create({
     container: {

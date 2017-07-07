@@ -1,14 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
 } from 'react-native';
 
-var Main = require('./src/main')
+import Main from './src/main.js'
+
+// export default class authentication extends Component {
+//   render(){
+//     return <Main/>
+//   }
+// }
 
 AppRegistry.registerComponent('authentication', () => Main);

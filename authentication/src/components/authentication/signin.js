@@ -7,36 +7,34 @@ import {
 } from 'react-native';
 import firebase from 'firebase';
 
-var Button = require('../common/button')
+import Button from '../common/button';
 
-
-module.exports = React.createClass({
-    getInitialState: function () {
-        return {
+export default class Signin extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             username: '',
             password: ''
-        }
-    },
-    render: function () {
+        };
+    }
+    render() {
         return (
             <View style={styles.container}>
                 <Text>Sign In</Text>
                 <Text style={styles.label}>Username:</Text>
                 <TextInput style={styles.input}
-                    value={this.state.username}
-                    onChangeText={(text) => this.setState({ username: text })}
+                    onChangeText={(username) => this.setState({ username })}
                 />
                 <Text style={styles.label}>Password:</Text>
                 <TextInput
                     secureTextEntry={true}
                     style={styles.input}
-                    value={this.state.password}
-                    onChangeText={(text) => this.setState({ password: text })} />
+                    onChangeText={(password) => this.setState({ password })} />
                 <Button text={'Sign In'} onPress={this.onPress} />
             </View>
         )
-    },
-    onPress: function () {
+    }
+    onPress() {
         // Log the user in 
         firebase.auth().createUserWithEmailAndPassword(this.state.username, this.state.password)
             .then(function (result) {
@@ -49,7 +47,7 @@ module.exports = React.createClass({
                 // ...
             });
     }
-});
+}
 
 var styles = StyleSheet.create({
     container: {
