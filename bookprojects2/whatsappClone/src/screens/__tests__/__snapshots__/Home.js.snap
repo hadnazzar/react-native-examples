@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`has proper navigation options 1`] = `
+Object {
+  "title": "Home Screen",
+}
+`;
