@@ -25,9 +25,9 @@ class LoginForm extends Component {
 			return <Spinner size="large" />
 		}
 		return (
-			<Button onPress={this.onButtonPress.bind(this)}>
+			<button onPress={this.onButtonPress.bind(this)}>
 				Login
-			</Button>
+			</button>
 		)
 	}
 
